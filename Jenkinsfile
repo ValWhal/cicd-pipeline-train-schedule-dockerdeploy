@@ -14,10 +14,7 @@ pipeline {
             }
             steps {
                 script {
-                    app=docker.build("whalya/train-schedule")
-                    app.inside {
-                        sh 'echo $(curl localhost:8080)'
-                    }
+                    app = docker.build("whalya/train-schedule")
                 }
             }
         }
